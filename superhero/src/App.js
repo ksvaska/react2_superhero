@@ -1,11 +1,16 @@
 
 import './App.css';
-import Galery from './component/galery';
+import Card from './component/card';
+import data from './data/data.json';
+
 
 function App() {
+  console.log(data);
   return (
     <div className="App">
-      <Galery/>
+      {data.map((item)=>{
+        return(<Card name= {item.name} superpowers = {item.superpowers} info = {item.info} url = {item.url} />)
+      })}
 
     </div>
   );
